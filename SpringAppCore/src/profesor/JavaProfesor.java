@@ -28,7 +28,7 @@ public class JavaProfesor implements Profesor{
 
 	@Override
 	public void getPredmetKojiPredajem() {
-		predmet.dajMiPredmet("Java");
+		predmet.dajMiPredmet();	// od reference Predmet predmet, poziva metodu dajMiPredmet() iz klase Predmet
 		
 	}
 

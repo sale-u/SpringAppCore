@@ -3,6 +3,7 @@ package profesor;
 public class Predmet {
 	
 	private String nazivPredmeta;
+	private String sifraPredmeta;
 
 	public String getNazivPredmeta() {
 		return nazivPredmeta;
@@ -11,9 +12,17 @@ public class Predmet {
 	public void setNazivPredmeta(String nazivPredmeta) {
 		this.nazivPredmeta = nazivPredmeta;
 	}
+	
+	public String getSifraPredmeta() {
+		return sifraPredmeta;
+	}
 
-	public void dajMiPredmet(String ime) {
-		System.out.println("Predmet koji predajem je : " + getNazivPredmeta());
+	public void setSifraPredmeta(String sifraPredmeta) {
+		this.sifraPredmeta = sifraPredmeta;
+	}
+
+	public void dajMiPredmet() {
+		System.out.println("Predmet koji predajem je : " + getNazivPredmeta() + " sa sifrom : " + getSifraPredmeta());
 	}
 
 }
