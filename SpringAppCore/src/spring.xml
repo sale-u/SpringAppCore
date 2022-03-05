@@ -7,32 +7,6 @@
 	
 	<context:property-placeholder location="classpath:profesori.properties"/>
 	
-	<bean id = "profaPython" class="profesor.PythonProfesor" 
-	scope="singleton" 
-	init-method="initMetoda"
-	destroy-method="destroyMetoda">
-		<constructor-arg name="predmet" ref = "predmetPython"/> <!-- ovo je Dependency injection preko konstruktora -->
-		<constructor-arg name="ime" value="Python"/>
-	</bean>
-	
-	<bean id = "profaJave" class="profesor.JavaProfesor">
-		<property name="ime" value="${ime.profa.java}"/>
-		<property name="predmet" ref="predmetJava"/>  <!-- ovo je Dependency injection preko settera -->
-	</bean>
-	
-	<bean id = "profaJave2" class="profesor.JavaProfesor" scope="singleton">
-		<property name="ime" value="${ime.profa2.java}"/>
-		<property name="predmet" ref="predmetJava"/>  <!-- ovo je Dependency injection preko settera -->
-	</bean>
-	
-	<bean id="predmetPython" class="profesor.Predmet">
-		<property name="nazivPredmeta" value="Python"/>
-		<property name="sifraPredmeta" value="PY123"/>
-	</bean>	
-	
-	<bean id="predmetJava" class="profesor.Predmet">
-		<property name="nazivPredmeta" value="Java"/>
-		<property name="sifraPredmeta" value="JA456"/>
-	</bean>
+	<context:component-scan base-package="profesor"/>
 
 </beans>

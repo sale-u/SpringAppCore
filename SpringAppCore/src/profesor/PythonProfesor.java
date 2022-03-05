@@ -1,14 +1,29 @@
 package profesor;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.context.annotation.Scope;
+import org.springframework.stereotype.Component;
+
+import javax.annotation.PostConstruct;
+import javax.annotation.PreDestroy;
+
+@Component("profaPython")
+@Scope("singleton")
 public class PythonProfesor implements Profesor {
 	
+	@Value("Pera")
 	private String ime;
 	private Predmet predmet;
 
-	public PythonProfesor(String ime, Predmet predmet) {		// konstruktor
-		this.ime = ime;
+	@Autowired
+	public PythonProfesor(Predmet predmet) {		// konstruktor
 		this.predmet = predmet;
 	}
+//	public PythonProfesor(String ime, Predmet predmet) {		// konstruktor
+//		this.ime = ime;
+//		this.predmet = predmet;
+//	}
 	
 	public String getIme() {
 		return ime;
@@ -29,10 +44,12 @@ public class PythonProfesor implements Profesor {
 		
 	}
 	
+	@PostConstruct
 	public void initMetoda() {
 		System.out.println("Preuzmi jezik...");
 	}
 	
+	@PreDestroy
 	public void destroyMetoda() {
 		System.out.println("Zatvaram sve konekcije...");
 	}

@@ -1,8 +1,15 @@
 package profesor;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.stereotype.Component;
+
+@Component
 public class JavaProfesor implements Profesor{
 	
+	@Value("Perica")
 	private String ime;
+	
 	private Predmet predmet;
 
 	public String getIme() {
@@ -17,6 +24,7 @@ public class JavaProfesor implements Profesor{
 		return predmet;
 	}
 
+	@Autowired
 	public void setPredmet(Predmet predmet) {
 		this.predmet = predmet;
 	}

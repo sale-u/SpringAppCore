@@ -1,8 +1,14 @@
 package profesor;
 
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.stereotype.Component;
+
+@Component
 public class Predmet {
 	
+	@Value("Python")
 	private String nazivPredmeta;
+	@Value("PY123")
 	private String sifraPredmeta;
 
 	public String getNazivPredmeta() {
